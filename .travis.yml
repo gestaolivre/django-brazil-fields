@@ -1,0 +1,27 @@
+language: python
+python:
+  - '3.5'
+  - '3.4'
+  - '2.7'
+env:
+  - DJANGO_VERSION=1.9.2
+  - DJANGO_VERSION=1.8.9
+install:
+  - pip install six
+  - pip install pytest
+  - pip install coveralls
+  - pip install brazil-types
+  - pip install -q Django==$DJANGO_VERSION
+script:
+  - coverage run --source=brazil_fields setup.py test
+deploy:
+  provider: pypi
+  user: gestaolivre
+  password:
+    secure: "Qb41jxtZoCTJVojoYmVhavDRvrzxEsO8IRwze/7wLlKCv7TigoMBl7s7+gFI1hI2P79bOaCBXp3/7FJRsYkK5wpmiou0GT+QYKuBZz4vX6BfrbEG3cGnBm7AAVZ54uhKTTtyuAPSRa90Q4+ioqYnTFdN4g/oj5p0d8UtBMT5T/yuC+LgUyPbdn/D43ZCh5qI+Ck94V8+DfSYTt5lXj0xdjUwXwGTHBFa7snPSHQbzw6umQPJysBXmsPAhcMh7JoMUTGLPyAg26wR1Ax48HCxnSrLNdBkDst2rKQQYTrj6leVVSHuqnMmqVjBIzux7yyfVb+AYMdZAUYNKm2Ev2KjVyx7O9w9fH05/Y1mhdXv39PFL8JZ0+AbIP6dLY3lrqMbBfK3sevGdQEYoyt/vWmZ4oG2a3RbzxYF0Tiyy94rZMJXitB3Ycc1iQ/rCv4VlRAL14kHhkIV2IYCZKFE2E+VGIUEbOlkWqb5K5XtfdzdWKUwoEH6zT2yfECMBmn7KgkIZQFAa0rrSu3c2Kglb/1xP/FHXi6tHUWjtXnsFwthD/Gs8XpBP3ZPSNV/8vEuC6ywJYj+MNz6q4IlLwSPcBJwf+yc9K6D5T9py/zGzEQAOxJswinqe/By1tUXHH9kfNMSLF6nqIyz/A3UsaWSLJg0mx8bkx/7vFXV2fS4ZV3doAQ="
+  distributions: "sdist bdist_wheel"
+  on:
+    tags: true
+    repo: gestaolivre/django-brazil-fields
+after_success:
+  - coveralls
