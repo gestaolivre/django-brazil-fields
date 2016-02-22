@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/gestaolivre/django-brazil-fields/badge.svg)](https://coveralls.io/r/gestaolivre/django-brazil-fields)
 [![Code Health](https://landscape.io/github/gestaolivre/django-brazil-fields/master/landscape.svg?style=flat)](https://landscape.io/github/gestaolivre/django-brazil-fields/master)
 
-Tipos de dados usados no Brasil.
+Campos para os tipos de dados usados no Brasil.
 
 > This software is coded and documented in portuguese only as it is intended to be used to validate brazilian types.
 
@@ -20,7 +20,7 @@ Tipos de dados usados no Brasil.
 ## Objetivos do Projeto
 
 A ideia inicial do projeto e unificar em uma única biblioteca módulos para facilitar a utilização dos tipos de dados usados no
-Brasil, com validadores e métodos auxiliares para cada tipo.
+Brasil no Django, com validadores e métodos auxiliares para cada tipo.
 
 ## Compatibilidade do Projeto
 
